@@ -1,0 +1,263 @@
+/* Mobile Menu and Footer Fixes */
+
+/* Mobile menu link styling */
+@media (max-width: 767px) {
+    .nav-link-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0 !important;
+        border-left: none !important;
+        text-align: center;
+    }
+    
+    .nav-link-mobile.active {
+        border-bottom: 2px solid #00b8d4 !important;
+        border-left: none !important;
+        padding-bottom: 5px;
+    }
+    
+    /* Mobile menu transitions */
+    #mobileMenu {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+    
+    #mobileMenu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    
+    #mobileMenu.hidden {
+        display: none;
+        pointer-events: none;
+    }
+    
+    /* Make sure the mobile menu is visible when not hidden */
+    #mobileMenu:not(.hidden) {
+        display: block;
+    }
+    
+    /* Mobile menu button hover effect */
+    #mobileMenuBtn {
+        transition: transform 0.2s ease;
+    }
+    
+    #mobileMenuBtn:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Center the name in mobile menu footer */
+    .footer .flex.items-center.mb-4 {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Center the bar after navigation and contact info */
+    .footer h3.text-lg.font-bold.mb-6.relative.inline-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer h3.text-lg.font-bold.mb-6.relative.inline-block .h-1.w-10.bg-primary-500.mt-2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Hero section mobile fixes */
+    #home {
+        padding-top: 6rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    #home h1 {
+        font-size: 2.25rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    #home p {
+        font-size: 1rem !important;
+    }
+    
+    /* Keep hero in one section on mobile with side-by-side layout for all screen sizes */
+    /* For tablet-sized screens */
+    @media (max-width: 1023px) {
+        #home .flex.flex-col.lg\:flex-row {
+            flex-direction: row !important;
+            align-items: center;
+            gap: 1rem !important;
+            flex-wrap: nowrap !important;
+        }
+        
+        #home .w-full.lg\:w-1\/2 {
+            width: 50% !important;
+        }
+        
+        #home .w-full.lg\:w-1\/2[data-aos="fade-left"] {
+            margin-top: 0 !important;
+        }
+        
+        /* Make dashboard visualization smaller */
+        #home .relative.max-w-md.mx-auto {
+            transform: scale(0.85);
+            transform-origin: center left;
+        }
+        
+        /* Adjust text alignment for better mobile view */
+        #home .w-full.lg\:w-1\/2[data-aos="fade-right"] {
+            text-align: left !important;
+        }
+        
+        /* Adjust social links to be more compact */
+        #home .mt-8.md\:mt-10.flex.items-center.space-x-3.sm\:space-x-5 {
+            justify-content: flex-start !important;
+            margin-top: 1rem !important;
+        }
+    }
+    
+    /* Improve hero buttons on mobile */
+    #home .flex.flex-col.sm\:flex-row.flex-wrap.gap-3.md\:gap-4 {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        width: 100%;
+    }
+    
+    #home .flex.flex-col.sm\:flex-row.flex-wrap.gap-3.md\:gap-4 a {
+        width: auto !important;
+        margin-bottom: 0.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    /* Make profile image smaller on mobile */
+    #about .profile-image-container {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    #about .profile-image-container img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* For small mobile devices */
+@media (max-width: 639px) {
+    /* Keep side-by-side layout but adjust proportions */
+    #home .flex.flex-col.lg\:flex-row {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
+        gap: 0.5rem !important;
+    }
+    
+    #home .w-full.lg\:w-1\/2 {
+        width: 50% !important;
+    }
+    
+    #home .w-full.lg\:w-1\/2[data-aos="fade-left"] {
+        width: 50% !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Make dashboard visualization smaller */
+    #home .relative.max-w-md.mx-auto {
+        max-width: 100% !important;
+        transform: scale(0.8);
+        transform-origin: center right;
+        margin: 0;
+    }
+    
+    /* Reduce font size for better fit */
+    #home h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    #home p {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Make buttons stack on very small screens */
+    #home .flex.flex-col.sm\:flex-row.flex-wrap.gap-3.md\:gap-4 {
+        flex-direction: column !important;
+    }
+    
+    #home .flex.flex-col.sm\:flex-row.flex-wrap.gap-3.md\:gap-4 a {
+        width: 100% !important;
+    }
+    
+    /* Hide some floating elements to reduce clutter */
+    #home .absolute.top-0.right-0.-translate-y-1\/3.translate-x-1\/3,
+    #home .absolute.bottom-0.left-0.translate-y-1\/3.-translate-x-1\/3,
+    #home .absolute.top-1\/2.-right-4,
+    #home .absolute.-bottom-10.right-10 {
+        display: none !important;
+    }
+    
+    /* Hide some decorative elements on mobile to reduce clutter */
+    #home .particles-container {
+        opacity: 0.3;
+    }
+    
+    #home .absolute.top-1\/4.right-\[5\%\],
+    #home .absolute.bottom-1\/4.left-\[5\%\],
+    #home .absolute.top-1\/2.left-1\/2 {
+        opacity: 0.3;
+    }
+    
+    /* Make profile image even smaller on very small screens */
+    #about .profile-image-container {
+        max-width: 70%;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    /* Keep side-by-side layout but adjust for very small screens */
+    #home .flex.flex-col.lg\:flex-row {
+        gap: 0.25rem !important;
+    }
+    
+    /* Further reduce hero title size on smallest screens */
+    #home h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Make dashboard visualization smaller on smallest screens */
+    #home .relative.bg-white\/30 {
+        transform: scale(0.7);
+        transform-origin: center right;
+        margin: 0;
+    }
+    
+    /* Reduce the size of the charts inside the dashboard */
+    #home .h-16.sm\:h-24 {
+        height: 2.5rem !important;
+    }
+    
+    /* Reduce spacing in the dashboard */
+    #home .p-4.sm\:p-6 {
+        padding: 0.5rem !important;
+    }
+    
+    #home .gap-3.sm\:gap-4 {
+        gap: 0.25rem !important;
+    }
+    
+    /* Adjust social links to be more compact */
+    #home .mt-8.md\:mt-10.flex.items-center.space-x-3.sm\:space-x-5 {
+        margin-top: 0.5rem !important;
+    }
+    
+    #home .w-10.h-10.rounded-full {
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+} 
