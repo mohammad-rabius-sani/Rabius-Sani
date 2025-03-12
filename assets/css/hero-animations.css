@@ -1,0 +1,583 @@
+/* Hero SVG Animation Styles */
+
+/* Main SVG animation */
+.hero-svg-animation {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(67, 97, 238, 0.3));
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: center center;
+    animation: float-3d 8s infinite ease-in-out;
+}
+
+.hero-svg-animation:hover {
+    filter: drop-shadow(0 20px 40px rgba(67, 97, 238, 0.4));
+    transform: translateY(-10px) scale(1.05) rotate3d(1, 1, 1, 5deg);
+}
+
+/* Enhanced backdrop for SVG */
+.hero-image-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+                rgba(67, 97, 238, 0.1) 0%, 
+                rgba(76, 201, 240, 0.07) 40%, 
+                transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: backdrop-pulse 10s infinite ease-in-out;
+    filter: blur(20px);
+}
+
+/* Secondary glow effect */
+.hero-image-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(30deg);
+    width: 95%;
+    height: 95%;
+    background: radial-gradient(ellipse at center, 
+                rgba(76, 201, 240, 0.12) 0%, 
+                rgba(67, 97, 238, 0.08) 40%, 
+                transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: glow-rotate 20s infinite linear;
+    filter: blur(25px);
+}
+
+/* Tech pattern background */
+.bg-tech-pattern {
+    background-image: 
+        linear-gradient(rgba(67, 97, 238, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(67, 97, 238, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Hero image container */
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    perspective: 1000px;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-style: preserve-3d;
+}
+
+/* Tech badges */
+.tech-badge {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #4361ee;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 5px 20px rgba(67, 97, 238, 0.25);
+    z-index: 20;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(67, 97, 238, 0.2);
+}
+
+.tech-badge:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(67, 97, 238, 0.35);
+}
+
+.tech-badge-1 {
+    top: 15%;
+    left: 10%;
+    animation: float-badge 6s infinite ease-in-out;
+}
+
+.tech-badge-2 {
+    top: 70%;
+    right: 15%;
+    animation: float-badge 7s infinite ease-in-out;
+}
+
+.tech-badge-3 {
+    bottom: 20%;
+    left: 15%;
+    animation: float-badge 5s infinite ease-in-out;
+}
+
+/* Animation for the backdrop */
+@keyframes backdrop-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.5;
+    }
+}
+
+/* Animation for the glow rotation */
+@keyframes glow-rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Animation for floating badges */
+@keyframes float-badge {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* 3D floating animation */
+@keyframes float-3d {
+    0% {
+        transform: translateY(0) rotate3d(1, 1, 1, 0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate3d(1, 1, 1, 2deg);
+    }
+    50% {
+        transform: translateY(0) rotate3d(1, 1, 1, 0deg);
+    }
+    75% {
+        transform: translateY(10px) rotate3d(1, 1, 1, -2deg);
+    }
+    100% {
+        transform: translateY(0) rotate3d(1, 1, 1, 0deg);
+    }
+}
+
+/* Slow pulse animation */
+@keyframes pulse-slow {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+}
+
+/* Float animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Button pulse animation */
+@keyframes button-pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(67, 97, 238, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+}
+
+.pulse-effect {
+    animation: button-pulse 2s infinite;
+    background: white;
+    color: #4361ee;
+}
+
+/* Animation utility classes */
+.animate-pulse-slow {
+    animation: pulse-slow 4s infinite ease-in-out;
+}
+
+.animate-float {
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-svg-animation {
+        max-width: 90%;
+        margin: 2rem auto 0;
+        animation: float-3d 6s infinite ease-in-out;
+    }
+    
+    .hero-image-backdrop {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .tech-badge {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .tech-badge-1 {
+        top: 10%;
+        left: 5%;
+    }
+    
+    .tech-badge-2 {
+        top: 75%;
+        right: 5%;
+    }
+    
+    .tech-badge-3 {
+        bottom: 15%;
+        left: 5%;
+    }
+}
+
+/* Dark mode adjustments */
+html.dark .hero-svg-animation {
+    filter: drop-shadow(0 15px 30px rgba(76, 201, 240, 0.3));
+}
+
+html.dark .hero-svg-animation:hover {
+    filter: drop-shadow(0 20px 40px rgba(76, 201, 240, 0.4));
+}
+
+html.dark .hero-image-backdrop {
+    background: radial-gradient(circle at center, 
+                rgba(76, 201, 240, 0.12) 0%, 
+                rgba(67, 97, 238, 0.08) 40%, 
+                transparent 70%);
+}
+
+html.dark .hero-image-glow {
+    background: radial-gradient(ellipse at center, 
+                rgba(76, 201, 240, 0.18) 0%, 
+                rgba(67, 97, 238, 0.12) 40%, 
+                transparent 70%);
+}
+
+html.dark .tech-badge {
+    background: rgba(20, 30, 50, 0.8);
+    color: #4cc9f0;
+    box-shadow: 0 5px 20px rgba(76, 201, 240, 0.25);
+    border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+html.dark .tech-badge:hover {
+    box-shadow: 0 10px 25px rgba(76, 201, 240, 0.35);
+}
+
+/* Particle effects */
+.particles-container {
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.4) 0%, rgba(76, 201, 240, 0.4) 100%);
+    filter: blur(5px);
+}
+
+.particle-1 {
+    width: 100px;
+    height: 100px;
+    top: 15%;
+    left: 10%;
+    animation: particle-float 20s infinite ease-in-out;
+}
+
+.particle-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    left: 5%;
+    animation: particle-float 25s infinite ease-in-out reverse;
+}
+
+.particle-3 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    right: 15%;
+    animation: particle-float 18s infinite ease-in-out;
+}
+
+.particle-4 {
+    width: 120px;
+    height: 120px;
+    bottom: 15%;
+    right: 10%;
+    animation: particle-float 22s infinite ease-in-out reverse;
+}
+
+.particle-5 {
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    left: 30%;
+    animation: particle-float 15s infinite ease-in-out;
+}
+
+.particle-6 {
+    width: 70px;
+    height: 70px;
+    bottom: 30%;
+    right: 25%;
+    animation: particle-float 17s infinite ease-in-out reverse;
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translate(50px, -30px) rotate(90deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(100px, 0) rotate(180deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translate(50px, 30px) rotate(270deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* Dark mode adjustments for particles */
+html.dark .particle {
+    background: linear-gradient(135deg, rgba(76, 201, 240, 0.3) 0%, rgba(67, 97, 238, 0.3) 100%);
+}
+
+/* Text animations */
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.8s forwards;
+    opacity: 0;
+}
+
+/* Typing effect animation */
+.typing-effect {
+    position: relative;
+    display: inline-block;
+}
+
+.typing-effect::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 3px;
+    background-color: #4361ee;
+    animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments for text animations */
+@media (max-width: 768px) {
+    .typing-effect::after {
+        height: 60%;
+        width: 2px;
+    }
+}
+
+/* Hero social section */
+.hero-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Social icon animations */
+.social-icon {
+    opacity: 1;
+    transform-origin: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(67, 97, 238, 0.2);
+    border: 1px solid rgba(67, 97, 238, 0.1);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(67, 97, 238, 0.3);
+}
+
+.social-icon:hover i {
+    animation: icon-bounce 0.5s;
+}
+
+@keyframes icon-bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* 3D perspective container */
+.hero-3d-container {
+    perspective: 1500px;
+    transform-style: preserve-3d;
+}
+
+.hero-3d-container:hover .hero-image-container {
+    transform: rotateY(5deg) rotateX(-2deg);
+}
+
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    perspective: 1000px;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-style: preserve-3d;
+}
+
+html.dark .pulse-effect {
+    background: rgba(20, 30, 50, 0.8);
+    color: #4cc9f0;
+    border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+/* Hero section particles */
+.hero-section .particles-container {
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.hero-section .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: float-particle 15s infinite ease-in-out;
+}
+
+.hero-section .particle-1 {
+    top: 15%;
+    left: 10%;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 0, 127, 0.3);
+    filter: blur(2px);
+}
+
+.hero-section .particle-2 {
+    top: 25%;
+    right: 15%;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 200, 255, 0.3);
+    filter: blur(3px);
+}
+
+.hero-section .particle-3 {
+    bottom: 20%;
+    left: 20%;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 0, 127, 0.25);
+    filter: blur(2px);
+}
+
+.hero-section .particle-4 {
+    bottom: 30%;
+    right: 25%;
+    width: 18px;
+    height: 18px;
+    background: rgba(0, 200, 255, 0.25);
+    filter: blur(3px);
+}
+
+.hero-section .particle-5 {
+    top: 40%;
+    left: 30%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 0, 127, 0.2);
+    filter: blur(1px);
+}
+
+.hero-section .particle-6 {
+    top: 60%;
+    right: 10%;
+    width: 14px;
+    height: 14px;
+    background: rgba(0, 200, 255, 0.2);
+    filter: blur(2px);
+}
+
+/* Dark mode specific particle styling */
+html.dark .hero-section .particle-1,
+html.dark .hero-section .particle-3,
+html.dark .hero-section .particle-5 {
+    background: rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+html.dark .hero-section .particle-2,
+html.dark .hero-section .particle-4,
+html.dark .hero-section .particle-6 {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+} 

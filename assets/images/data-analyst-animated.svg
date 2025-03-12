@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Definitions for gradients, filters and patterns -->
+  <defs>
+    <!-- Main background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f4ff" stop-opacity="0.8">
+        <animate attributeName="stop-color" values="#f0f4ff;#e6f0ff;#f0f4ff" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#e6f0ff" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#e6f0ff;#f0f4ff;#e6f0ff" dur="10s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    
+    <!-- Glow effect for elements -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Radial gradient for central glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#4361ee" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#4361ee" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Pattern for tech grid -->
+    <pattern id="techGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.2" />
+    </pattern>
+    
+    <!-- Gradient for data flow lines -->
+    <linearGradient id="dataFlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4361ee" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#4cc9f0" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4361ee" stop-opacity="0.1" />
+      <animate attributeName="x1" values="0%;100%;0%" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="100%;200%;100%" dur="3s" repeatCount="indefinite" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background elements -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#bgGradient)" />
+  <rect x="0" y="0" width="800" height="600" fill="url(#techGrid)" />
+  <circle cx="400" cy="300" r="280" fill="url(#centerGlow)">
+    <animate attributeName="r" values="280;300;280" dur="10s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="10s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Animated wave paths -->
+  <path d="M0,400 Q200,350 400,400 T800,400" stroke="#4361ee" stroke-width="2" fill="none" opacity="0.3">
+    <animate attributeName="d" values="M0,400 Q200,350 400,400 T800,400;M0,420 Q200,370 400,420 T800,420;M0,400 Q200,350 400,400 T800,400" dur="15s" repeatCount="indefinite" />
+  </path>
+  <path d="M0,430 Q200,380 400,430 T800,430" stroke="#4cc9f0" stroke-width="2" fill="none" opacity="0.3">
+    <animate attributeName="d" values="M0,430 Q200,380 400,430 T800,430;M0,450 Q200,400 400,450 T800,450;M0,430 Q200,380 400,430 T800,430" dur="12s" repeatCount="indefinite" />
+  </path>
+  <path d="M0,460 Q200,410 400,460 T800,460" stroke="#3a0ca3" stroke-width="2" fill="none" opacity="0.2">
+    <animate attributeName="d" values="M0,460 Q200,410 400,460 T800,460;M0,480 Q200,430 400,480 T800,480;M0,460 Q200,410 400,460 T800,460" dur="18s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Central dashboard element -->
+  <g transform="translate(400, 300)">
+    <!-- Main dashboard frame with 3D effect -->
+    <g transform="skewX(-5) skewY(2)">
+      <rect x="-180" y="-140" width="360" height="260" rx="15" fill="#ffffff" stroke="#4361ee" stroke-width="2" opacity="0.95" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.95;1;0.95" dur="5s" repeatCount="indefinite" />
+      </rect>
+      
+      <!-- Dashboard header -->
+      <rect x="-180" y="-140" width="360" height="40" rx="15" fill="#4361ee" />
+      <circle cx="-160" cy="-120" r="6" fill="#ff5252" />
+      <circle cx="-140" cy="-120" r="6" fill="#ffeb3b" />
+      <circle cx="-120" cy="-120" r="6" fill="#4caf50" />
+      <text x="0" y="-115" font-family="Arial" font-size="16" text-anchor="middle" fill="#ffffff">Data Dashboard</text>
+    </g>
+    
+    <!-- Dashboard content -->
+    <g transform="translate(-120, -60) scale(0.8)">
+      <!-- Bar chart with animation -->
+      <rect x="0" y="0" width="25" height="60" rx="4" fill="#4361ee" opacity="0.8">
+        <animate attributeName="height" values="60;80;60" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="y" values="0;-20;0" dur="2s" repeatCount="indefinite" />
+      </rect>
+      <rect x="35" y="-10" width="25" height="70" rx="4" fill="#4361ee" opacity="0.8">
+        <animate attributeName="height" values="70;90;70" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-10;-30;-10" dur="2.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="70" y="-20" width="25" height="80" rx="4" fill="#4361ee" opacity="0.8">
+        <animate attributeName="height" values="80;100;80" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-20;-40;-20" dur="3s" repeatCount="indefinite" />
+      </rect>
+      <rect x="105" y="-5" width="25" height="65" rx="4" fill="#4361ee" opacity="0.8">
+        <animate attributeName="height" values="65;85;65" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-5;-25;-5" dur="2.2s" repeatCount="indefinite" />
+      </rect>
+      <rect x="140" y="-15" width="25" height="75" rx="4" fill="#4361ee" opacity="0.8">
+        <animate attributeName="height" values="75;95;75" dur="2.7s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-15;-35;-15" dur="2.7s" repeatCount="indefinite" />
+      </rect>
+      
+      <!-- Bar chart labels -->
+      <text x="12.5" y="20" font-family="Arial" font-size="10" text-anchor="middle" fill="#333">Q1</text>
+      <text x="47.5" y="20" font-family="Arial" font-size="10" text-anchor="middle" fill="#333">Q2</text>
+      <text x="82.5" y="20" font-family="Arial" font-size="10" text-anchor="middle" fill="#333">Q3</text>
+      <text x="117.5" y="20" font-family="Arial" font-size="10" text-anchor="middle" fill="#333">Q4</text>
+      <text x="152.5" y="20" font-family="Arial" font-size="10" text-anchor="middle" fill="#333">Q5</text>
+    </g>
+    
+    <!-- Pie chart with rotation -->
+    <g transform="translate(100, -60) scale(0.8)">
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#333" stroke-width="1" opacity="0.3" />
+      
+      <!-- Pie segments with animation -->
+      <path d="M0,0 L0,-50 A50,50 0 0,1 43.3,25 z" fill="#4361ee" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite" />
+      </path>
+      <path d="M0,0 L43.3,25 A50,50 0 0,1 -43.3,25 z" fill="#4cc9f0" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite" />
+      </path>
+      <path d="M0,0 L-43.3,25 A50,50 0 0,1 0,-50 z" fill="#3a0ca3" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite" />
+      </path>
+      
+      <!-- Center dot -->
+      <circle cx="0" cy="0" r="5" fill="#fff" stroke="#4361ee" stroke-width="1" />
+    </g>
+    
+    <!-- Line chart with animation -->
+    <g transform="translate(0, 60) scale(0.9)">
+      <!-- Grid lines -->
+      <line x1="-150" y1="0" x2="150" y2="0" stroke="#333" stroke-width="1" opacity="0.2" />
+      <line x1="-150" y1="-25" x2="150" y2="-25" stroke="#333" stroke-width="1" opacity="0.1" />
+      <line x1="-150" y1="-50" x2="150" y2="-50" stroke="#333" stroke-width="1" opacity="0.1" />
+      <line x1="-150" y1="25" x2="150" y2="25" stroke="#333" stroke-width="1" opacity="0.1" />
+      
+      <!-- Animated line chart -->
+      <polyline points="-150,0 -100,-20 -50,10 0,-30 50,5 100,-15 150,0" stroke="#4cc9f0" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <animate attributeName="points" 
+                 values="-150,0 -100,-20 -50,10 0,-30 50,5 100,-15 150,0;
+                        -150,5 -100,-15 -50,15 0,-25 50,10 100,-10 150,5;
+                        -150,0 -100,-20 -50,10 0,-30 50,5 100,-15 150,0" 
+                 dur="8s" repeatCount="indefinite" />
+      </polyline>
+      
+      <!-- Data points -->
+      <circle cx="-150" cy="0" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="0;5;0" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="-100" cy="-20" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="-20;-15;-20" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="-50" cy="10" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="10;15;10" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="-30" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="-30;-25;-30" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="50" cy="5" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="5;10;5" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="100" cy="-15" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="-15;-10;-15" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="150" cy="0" r="5" fill="#4cc9f0">
+        <animate attributeName="cy" values="0;5;0" dur="8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Floating data elements -->
+  <g>
+    <!-- Data nodes -->
+    <circle cx="150" cy="150" r="15" fill="#4cc9f0" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="cy" values="150;130;150" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="r" values="15;17;15" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="650" cy="150" r="15" fill="#4cc9f0" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="cy" values="150;170;150" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="r" values="15;17;15" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="450" r="15" fill="#4cc9f0" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="cy" values="450;430;450" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="15;17;15" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="600" cy="450" r="15" fill="#4cc9f0" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="cy" values="450;470;450" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="r" values="15;17;15" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Data flow connections -->
+  <g>
+    <!-- Animated data flow lines -->
+    <line x1="150" y1="150" x2="400" y2="300" stroke="url(#dataFlowGradient)" stroke-width="3" stroke-dasharray="5,5" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="650" y1="150" x2="400" y2="300" stroke="url(#dataFlowGradient)" stroke-width="3" stroke-dasharray="5,5" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="2.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="200" y1="450" x2="400" y2="300" stroke="url(#dataFlowGradient)" stroke-width="3" stroke-dasharray="5,5" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="600" y1="450" x2="400" y2="300" stroke="url(#dataFlowGradient)" stroke-width="3" stroke-dasharray="5,5" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="2.2s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Floating tech icons -->
+  <g transform="translate(150, 150) scale(0.8)">
+    <circle cx="0" cy="0" r="35" fill="#4361ee" opacity="0.9" filter="url(#glow)">
+      <animate attributeName="r" values="35;38;35" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="8" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff">SQL</text>
+    <animateTransform attributeName="transform" type="translate" values="150,150; 160,140; 150,150" dur="10s" repeatCount="indefinite" additive="sum" />
+  </g>
+  
+  <g transform="translate(650, 150) scale(0.8)">
+    <circle cx="0" cy="0" r="35" fill="#4361ee" opacity="0.9" filter="url(#glow)">
+      <animate attributeName="r" values="35;38;35" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="8" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff">BI</text>
+    <animateTransform attributeName="transform" type="translate" values="650,150; 640,140; 650,150" dur="9s" repeatCount="indefinite" additive="sum" />
+  </g>
+  
+  <g transform="translate(200, 450) scale(0.8)">
+    <circle cx="0" cy="0" r="35" fill="#4361ee" opacity="0.9" filter="url(#glow)">
+      <animate attributeName="r" values="35;38;35" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="8" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Excel</text>
+    <animateTransform attributeName="transform" type="translate" values="200,450; 210,430; 200,450" dur="11s" repeatCount="indefinite" additive="sum" />
+  </g>
+  
+  <g transform="translate(600, 450) scale(0.8)">
+    <circle cx="0" cy="0" r="35" fill="#4361ee" opacity="0.9" filter="url(#glow)">
+      <animate attributeName="r" values="35;38;35" dur="5.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="0" y="8" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Data</text>
+    <animateTransform attributeName="transform" type="translate" values="600,450; 590,430; 600,450" dur="10.5s" repeatCount="indefinite" additive="sum" />
+  </g>
+  
+  <!-- Particle effects -->
+  <g>
+    <circle cx="250" cy="200" r="3" fill="#ffffff" opacity="0.6">
+      <animate attributeName="cx" values="250;260;250" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="200;190;200" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="200" r="3" fill="#ffffff" opacity="0.6">
+      <animate attributeName="cx" values="550;540;550" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="200;210;200" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="400" r="3" fill="#ffffff" opacity="0.6">
+      <animate attributeName="cx" values="300;310;300" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="400;390;400" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="400" r="3" fill="#ffffff" opacity="0.6">
+      <animate attributeName="cx" values="500;490;500" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="400;410;400" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="150" r="3" fill="#ffffff" opacity="0.6">
+      <animate attributeName="cy" values="150;140;150" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="450" r="3" fill="#ffffff" opacity="0.6">
+      <animate attributeName="cy" values="450;460;450" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Small decorative elements -->
+  <g>
+    <rect x="100" y="100" width="10" height="10" rx="2" fill="#3a0ca3" opacity="0.5" transform="rotate(45, 105, 105)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="700" y="100" width="10" height="10" rx="2" fill="#3a0ca3" opacity="0.5" transform="rotate(45, 705, 105)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3.5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="100" y="500" width="10" height="10" rx="2" fill="#3a0ca3" opacity="0.5" transform="rotate(45, 105, 505)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="700" y="500" width="10" height="10" rx="2" fill="#3a0ca3" opacity="0.5" transform="rotate(45, 705, 505)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4.5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg> 
